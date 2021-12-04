@@ -16,7 +16,7 @@ export default function selectArrondissement(props) {
 
   return (
     <div className="slider">
-      <p style={{marginBottom:'4em'}}> Votre selection :{selection.length ? selection.toString(): " Faite defiler le slider pour filtrer les arrondissements"}   </p>
+      <p style={{marginBottom:'4em'}}> Votre selection : {selection.length ? selection.toString(): " Faite defiler le slider pour filtrer les arrondissements"}   </p>
       <Slider
         range
         step={1}
