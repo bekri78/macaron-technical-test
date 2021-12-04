@@ -12,20 +12,20 @@ export default function IntroText() {
                     <Col sm={3}></Col>
                     <Col sm={6}  >
                     <h1 className="h1Intro">
-                    Park Like a Boss
+                    Get Place like  a Boss
                     </h1>
                     <p class="m-t-20 text-justify test">
-                    20 min. Temps moyen pour trouver une place dans les rues de Courbevoie.
-                    La moitié d’un épisode de Stranger Things.
+                    48h. Temps moyen pour trouver un lieu ou tourner un film.
+                    La moitié d’un épisode de ?? .
                     <br></br>
                      <br></br>
-                    Trois véhicules en circulation sur dix qui cherchent une place, ces trois véhicules en trop brûlant
-                    inutilement de l’essence et envoyant inutilement du CO2 dans l’atmosphère.
+                    Trois equipes de court-metrage sur dix qui cherchent un site ou trouner, ces trois equipes en mettant trop de temps
+                    perde du temps  dead line et mettent en perile le project .
                     <br></br>
                     <br></br>
-                    Macaron te permet de passer du temps sur les choses qui comptent (comme mater Stranger Things) tout
-                    en réduisant ton empreinte carbone.
-                    Avec Macaron trouve une place dans les rues de Courbevoie en 3 minutes.
+                    Macaron Animation te permet de passer du temps sur les choses qui comptent (comme installer le plateau) tout
+                    en réduisant ton temps de recherche.
+                    Avec Macaron Animation trouve un site de tournage dans paris en 3 minutes chono.
                 </p>
                     </Col>
                     <Col sm={3}></Col>
