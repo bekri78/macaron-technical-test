@@ -78,7 +78,7 @@ const Toast = Swal.mixin({
   };
   const failMessage = () => {
     let formMess = document.querySelector(".form-message");
-    formMess.innerHTML = "Merci de remplire correctement les champs requis *";
+    formMess.innerHTML = "Merci de remplir correctement les champs requis *";
     formMess.style.opacity = "1";
     formMess.style.background = "rgb(253,87,87)";
     formMess.style.color = "white";

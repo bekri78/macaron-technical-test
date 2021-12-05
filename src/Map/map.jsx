@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import React, { useEffect, useState } from "react";
 import { arrondissementData } from "../arrondissements";
 import { lieuDeTournage } from "../lieux-de-tournage-a-paris";
@@ -22,7 +23,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-export default function Map() {
+export default function Map(props) {
   const [location, setLocation] = useState([]);
   const [dataRating, setDataRating] = useState([]);
   const [centerMap, setCenterMap] = useState();
@@ -35,25 +36,20 @@ export default function Map() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(centerMap);
-  }, [centerMap]);
+  useEffect(() => {}, [centerMap]);
 
   const rating = (newValue) => {
+    props.postaleCode(newValue);
     let arrayRating = [];
-
     location
       .filter(
         (el) =>
           el.ardt_lieu >= newValue[0] && el.ardt_lieu <= newValue.slice(-1)[0]
       )
       .map((filterRating) => {
-        return (
-          console.log(filterRating),
-          arrayRating.push(filterRating),
-          setDataRating(arrayRating)
-        );
+        return arrayRating.push(filterRating), setDataRating(arrayRating);
       });
+
   };
   return (
     <Container>
