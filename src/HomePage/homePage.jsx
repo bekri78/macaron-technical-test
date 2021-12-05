@@ -16,8 +16,8 @@ export default function HomePage() {
       <Container>
         <Row>
           <Col md={7}>
-            <h1 class="semi-bold text-white">Macaron Animation</h1>
-            <h4 class="text-white">
+            <h1 className="semi-bold text-white">Macaron Animation</h1>
+            <h4 className="text-white">
               Trouvez les lieux de tournages dans les rues de paris.<br></br>
               Près de chez vous.
             </h4>

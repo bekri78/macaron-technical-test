@@ -8,8 +8,8 @@ export default function NavBar() {
   return (
     <Navbar
       className="nav"
-      collapseOnSelec
-      sticky="top"
+      
+      sticky="top" 
       expand="sm"
       bg="black"
       variant="dark"

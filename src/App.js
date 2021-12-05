@@ -20,8 +20,8 @@ export default function App() {
           setCodePostalArray(code);
         }}
       />
-      <ContactUs />
       <InfoLieu codeposteArray={codeposteArray} />
+      <ContactUs />
     </div>
   );
 }

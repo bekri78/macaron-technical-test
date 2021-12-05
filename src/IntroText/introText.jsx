@@ -14,7 +14,7 @@ export default function IntroText() {
                     <h1 className="h1Intro">
                     Get Place like  a Boss
                     </h1>
-                    <p class="m-t-20 text-justify test">
+                    <p className="m-t-20 text-justify test">
                     48h. Temps moyen pour trouver un lieu ou tourner un film.
                     La moitié d’un épisode de ?? .
                     <br></br>
