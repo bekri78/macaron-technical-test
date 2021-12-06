@@ -12,17 +12,20 @@ let arrayFilter = [];
 let arrayFilterForPagination = [];
 
 const Filter = (req) => {
-  let test = lieuDeTournage.features;
-  var result = test.filter(function (e) {
+  let lieu = lieuDeTournage.features;
+  let result = lieu.filter(function (e) {
     return req.includes(e.properties.ardt_lieu);
   });
-
   arrayFilter.push(result);
-  arrayFilterForPagination.push(result);
+  if (arrayFilterForPagination.length) {
+    arrayFilterForPagination = [];
+    arrayFilterForPagination.push(result);
+  } else {
+    arrayFilterForPagination.push(result);
+  }
 };
 
 app.get("/api/macaron", (req, res) => {
-  console.log("je suis dans macaron server");
   let min = req.query.min;
   let max = req.query.max;
   if (min === undefined && max === undefined) {
@@ -51,9 +54,9 @@ app.get("/api/macaron/pagination", (req, res) => {
   res.send(resultPagination);
 });
 
-app.get("/*", (_, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("/*", (_, res) => {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 app.listen(5000, () => {
   console.log(`server est sur le port  : ${PORT}`);
