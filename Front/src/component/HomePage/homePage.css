@@ -1,0 +1,38 @@
+.text-white {
+  font-family: Open Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  color: #fff !important;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.473),
+    2px 2px 2px rgba(0, 0, 0, 0.521);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 2%;
+}
+#Home {
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgHome1 {
+  height: 40px;
+  vertical-align: middle;
+  border: 0;
+}
+.imgHome2 {
+  height: 58px;
+  vertical-align: middle;
+  border: 0;
+}
+.insta {
+  width: 36px;
+  height: 36px;
+  aspect-ratio: auto 36 / 36;
+
+  text-shadow: none !important;
+  color: #3a8fc8;
+  transition: color 0.1s linear 0s, background-color 0.1s linear 0s,
+    opacity 0.2s linear 0s !important;
+}

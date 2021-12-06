@@ -1,0 +1,19 @@
+#Footer{
+    background-color: #1a1a1a;
+    padding-top: 75px;
+    padding-bottom: 55px;
+}
+
+ 
+.text{
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .01em;
+    line-height: 25px;
+    margin: 0 0 10px;
+    font-style: normal;
+    white-space: normal;
+    color: #fff!important;
+    padding-top: 10px!important;
+}
