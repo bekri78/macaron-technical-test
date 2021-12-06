@@ -1,7 +1,7 @@
 /* eslint-disable no-sequences */
 import React, { useEffect, useState } from "react";
-import { arrondissementData } from "../arrondissements";
-import { lieuDeTournage } from "../lieux-de-tournage-a-paris";
+import { arrondissementData } from "../../arrondissements";
+import { lieuDeTournage } from "../../lieux-de-tournage-a-paris";
 import Arrondissement from "../SelectArrondissement/selectArrondissement";
 import { MapContainer, TileLayer, Polygon, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
@@ -12,9 +12,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./map.css";
-import markerIcon2 from "../Marker/marker-icon-2x.png";
-import markerIcon from "../Marker/marker-icon.png";
-import markerShadow from "../Marker/marker-shadow.png";
+import markerIcon2 from "../../Marker/marker-icon-2x.png";
+import markerIcon from "../../Marker/marker-icon.png";
+import markerShadow from "../../Marker/marker-shadow.png";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -38,7 +38,7 @@ export default function Map(props) {
 
   useEffect(() => {}, [centerMap]);
 
-  const rating = (newValue) => {
+  const rating =  (newValue) => {
     props.postaleCode(newValue);
     let arrayRating = [];
     location
@@ -52,7 +52,8 @@ export default function Map(props) {
 
   };
   return (
-    <Container>
+    <Container className="jumbotron">
+      <h1 className='titlemap'>Map</h1>
       <Row>
         <Col sm={12}>
           <Arrondissement
@@ -63,8 +64,9 @@ export default function Map(props) {
           {centerMap && (
             <MapContainer
               center={centerMap}
-              zoom={12}
+              zoom={14}
               style={{ width: "100%", height: "100vh" }}
+              className='mapContainer'
             >
               <TileLayer
                 url="https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=z6XfQf2YId8cjbY3LhER"

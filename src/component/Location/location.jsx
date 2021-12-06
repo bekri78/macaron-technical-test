@@ -5,6 +5,7 @@ import Modale from "../Modale/modale";
 export default function Location(props) {
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
+  const DEFAULT_LOCATION =[48.86007841437039, 2.342733755137733];
 
   useEffect(() => {
     // a ne faire qu'une seule fois si localisation est presente
@@ -17,7 +18,7 @@ export default function Location(props) {
   };
 
   const errorLocation = (error) => {
-    props.centerlocation([48.86007841437039, 2.342733755137733]);
+    props.centerlocation(DEFAULT_LOCATION);
 
     setOpen(!open);
     switch (error.code) {

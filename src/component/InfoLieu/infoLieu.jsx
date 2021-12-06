@@ -63,13 +63,14 @@ export default function InfoLieu(props) {
                     nom_realisateur={data.properties.nom_realisateur}
                     lieu={data.properties.adresse_lieu}
                     date_debut={data.properties.date_debut}
+                    nom_tournage={data.properties.nom_tournage}
                     lat={data.properties.coord_y}
                     lng={data.properties.coord_x}
                   />
                 );
               })}
           </div>
-          <Pagination defaultCurrent={1} onChange={onChange} total={50} />
+          <Pagination  style={{marginTop:'1em'}} defaultCurrent={1} onChange={onChange} total={50} />
         </Col>
       </Row>
     </Container>

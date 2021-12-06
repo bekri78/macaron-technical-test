@@ -2,6 +2,7 @@
 .h1Intro{
     margin: auto;
     text-align: center;
+    margin-bottom: 2em;
 }
 
 .m-t-20 {
@@ -13,7 +14,7 @@
 }
 .test{
 
- 
+    
     font-size: 16px;
     font-weight: 300;
     letter-spacing: .01em;
@@ -21,4 +22,9 @@
     margin: 0 0 10px;
     font-style: normal;
     white-space: normal;
+}
+
+#introText{
+    
+    margin-bottom: 2em;
 }

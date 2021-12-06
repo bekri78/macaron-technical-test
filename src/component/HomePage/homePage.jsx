@@ -23,13 +23,13 @@ export default function HomePage() {
             </h4>
             <div>
               <a href="https://apple.co/3CeVGTy">
-                <img src={AppStore} height="40" alt="apple" />
+                <img  className ='imgHome' src={AppStore}   alt="apple"  />
               </a>{" "}
               <a
                 href="https://play.google.com/store/apps/details?id=ai.macaron.client"
                 alt="android"
               >
-                <img src={GooglePlay} height="40" alt="apple" />
+                <img className ='imgHome' src={GooglePlay}  alt="apple" />
               </a>
             </div>
             <div>

@@ -24,6 +24,7 @@ export default function CardTournage(props) {
           description={
             <div>
               <p>Date: {props.date_debut}</p>
+              <p>{props.nom_tournage}</p>
               <p>{props.lieu}</p>
             </div>
           }

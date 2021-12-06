@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import Navigation from "./Navbar/navbar";
-import HomePage from "./HomePage/homePage";
-import IntroText from "./IntroText/introText";
-import ContactUs from "./Form/form";
-import InfoLieu from "./InfoLieu/infoLieu";
+import Navigation from "./component/Navbar/navbar";
+import HomePage from "./component/HomePage/homePage";
+import IntroText from "./component/IntroText/introText";
+import ContactUs from "./component/Form/form";
+import InfoLieu from "./component/InfoLieu/infoLieu";
+import Footer from "./component/Footer/Footer";
 
-import Map from "./Map/map";
+import Map from "./component/Map/map";
 
 export default function App() {
   const [codeposteArray, setCodePostalArray] = useState([]);
   console.log(codeposteArray);
   return (
-    <div>
+    <>
       <Navigation />
       <HomePage />
       <IntroText />
@@ -22,6 +23,7 @@ export default function App() {
       />
       <InfoLieu codeposteArray={codeposteArray} />
       <ContactUs />
-    </div>
+      <Footer />
+    </>
   );
 }
