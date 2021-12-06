@@ -54,9 +54,9 @@ app.get("/api/macaron/pagination", (req, res) => {
   res.send(resultPagination);
 });
 
-// app.get("/*", (_, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.get("/", (_, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 app.listen(5000, () => {
   console.log(`server est sur le port  : ${PORT}`);
