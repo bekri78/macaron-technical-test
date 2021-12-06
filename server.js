@@ -4,8 +4,9 @@ const path = require("path");
 require("dotenv").config();
 const PORT = process.env.PORT || 7000;
 const app = express();
-
-app.use(express.static("Front/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("Front/build"));
+}
 app.use(express.json());
 let arrayFilter = [];
 let arrayFilterForPagination = [];
@@ -49,6 +50,7 @@ app.get("/api/macaron/pagination", (req, res) => {
   );
   res.send(resultPagination);
 });
+
 app.get("/*", (_, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });

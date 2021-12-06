@@ -4,10 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start":"node server.js",
     "watch":"nodemon server.js",
+    "build": "cd Front && npm run build",
     "client": "cd Front && npm start",
-    "build": "cd Front && npm run build"
+    "install-client":"cd Front && npm install",
+    "heroku-postbuild":"npm run install-client && npm run build",
+    "start":"node server.js"
+  },
+  "engines":{
+    "node":"16.x"
   },
   "author": "",
   "license": "ISC",
