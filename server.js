@@ -1,14 +1,16 @@
-//import { lieuDeTournage } from "./lieux-de-tournage-a-paris.json";
 const lieuDeTournage = require("./lieux-de-tournage-a-paris");
 const express = require("express");
+const path = require("path");
 require("dotenv").config();
 const PORT = process.env.PORT || 7000;
 const app = express();
+
+app.use(express.static("Front/build"));
 app.use(express.json());
 let arrayFilter = [];
 let arrayFilterForPagination = [];
 
-const testFilter = (req) => {
+const Filter = (req) => {
   let test = lieuDeTournage.features;
   var result = test.filter(function (e) {
     return req.includes(e.properties.ardt_lieu);
@@ -23,7 +25,7 @@ app.get("/api/macaron", (req, res) => {
   let min = req.query.min;
   let max = req.query.max;
   if (min === undefined && max === undefined) {
-    testFilter(req.query.codePostale);
+    Filter(req.query.codePostale);
     arrayFilter = [];
   }
   if (
@@ -46,6 +48,9 @@ app.get("/api/macaron/pagination", (req, res) => {
     endIndex
   );
   res.send(resultPagination);
+});
+app.get("/*", (_, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(5000, () => {

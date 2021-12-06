@@ -6,7 +6,8 @@
   "scripts": {
     "start":"node server.js",
     "watch":"nodemon server.js",
-    "client": "cd Front && npm start"
+    "client": "cd Front && npm start",
+    "build": "cd Front && npm run build"
   },
   "author": "",
   "license": "ISC",
