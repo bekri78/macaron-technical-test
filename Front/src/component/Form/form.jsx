@@ -100,7 +100,7 @@ const Toast = Swal.mixin({
   };
 
   const handeSubmit = (e) => {
-    console.log(name, email, value, sujet);
+    
     e.preventDefault();
     if (name && isEmail() && value && sujet) {
       sendEmail({
@@ -115,7 +115,7 @@ const Toast = Swal.mixin({
   };
 
   const sendEmail = (variable) => {
-    console.log(variable);
+   
     emailjs
       .send(
         "service_ar8ie92",
@@ -125,7 +125,7 @@ const Toast = Swal.mixin({
       )
       .then(
         (result) => {
-          console.log(result.status);
+          
           succesMessage();
           setName("");
           setEmail("");
@@ -134,7 +134,7 @@ const Toast = Swal.mixin({
 
         },
         (error) => {
-          console.log(error.text);
+        
           Toast.fire({
             icon: "error",
             title: "Erreur veuillez réessayer",

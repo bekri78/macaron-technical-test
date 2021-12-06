@@ -10,7 +10,7 @@ import Map from "./component/Map/map";
 
 export default function App() {
   const [codeposteArray, setCodePostalArray] = useState([]);
-  console.log(codeposteArray);
+
   return (
     <>
       <Navigation />

@@ -9,7 +9,7 @@ export default function InfoLieu(props) {
   const [recupInfoBack, setRecupInfoBack] = useState([]);
   const [page, setPage] = useState(null);
 
-  console.log(infoLieu);
+ 
   useEffect(() => {
     async function fetchMyAPI() {
       await window.fetch(
@@ -17,7 +17,7 @@ export default function InfoLieu(props) {
       );
     }
     if (infoLieu.length) {
-      console.log("api");
+      
       fetchMyAPI();
       setPage(1);
       
@@ -30,7 +30,7 @@ export default function InfoLieu(props) {
         `/api/macaron/pagination?page=${page}&limit=8`
       );
       const json2 = await pagination.json();
-      console.log(json2);
+     
       setRecupInfoBack(json2);
     }
     if (page !== null) {
@@ -38,7 +38,7 @@ export default function InfoLieu(props) {
     }
   }, [page, infoLieu]);
   const onChange = (page) => {
-    console.log(page);
+    
 
     setPage(page);
   };
