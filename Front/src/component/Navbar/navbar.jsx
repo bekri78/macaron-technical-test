@@ -23,13 +23,11 @@ export default function NavBar() {
           <Nav.Link className="liens" href="/">
             Accueil
           </Nav.Link>
-          <Nav.Link className="liens" href="/texte">
-            Outils
+         
+          <Nav.Link className="liens" href="#map">
+            Map
           </Nav.Link>
-          <Nav.Link className="liens" href="/map">
-            Professionnels
-          </Nav.Link>
-          <Nav.Link className="liens" href="/contact">
+          <Nav.Link className="liens" href="#contact">
             Contact
           </Nav.Link>
         </Nav>
