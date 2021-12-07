@@ -5,7 +5,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 7000;
 const app = express();
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("Front/build"));
+  app.use(express.static("./Front/build"));
 }
 app.use(express.json());
 let arrayFilter = [];
