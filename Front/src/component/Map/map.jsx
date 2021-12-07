@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { arrondissementData } from "../../arrondissements";
 import { lieuDeTournage } from "../../lieux-de-tournage-a-paris";
-import Arrondissement from "../SelectArrondissement/selectArrondissement";
+import Arrondissements from "../SelectArrondissement/selectArrondissement";
 import { MapContainer, TileLayer, Polygon, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Location from "../Location/location";
@@ -47,16 +47,17 @@ export default function Map(props) {
           el.ardt_lieu >= newValue[0] && el.ardt_lieu <= newValue.slice(-1)[0]
       )
       .map((filterRating) => {
+       
         return arrayRating.push(filterRating), setDataRating(arrayRating);
       });
 
   };
   return (
-    <Container className="jumbotron" id="#map">
+    <Container className="jumbotron" id="map">
       <h1 className='titlemap'>Map</h1>
       <Row>
         <Col sm={12}>
-          <Arrondissement
+          <Arrondissements
             valueArrondissement={(newValue) => {
               rating(newValue);
             }}
@@ -64,7 +65,7 @@ export default function Map(props) {
           {centerMap && (
             <MapContainer
               center={centerMap}
-              zoom={14}
+              zoom={12}
               style={{ width: "100%", height: "100vh" }}
               className='mapContainer'
             >
