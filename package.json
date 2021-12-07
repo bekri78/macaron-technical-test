@@ -4,12 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "watch":"nodemon server.js",
      "build": "cd Front && npm run build",
-    "client": "cd Front && npm start",
     "install-client":"cd Front && npm install",
     "heroku-postbuild":"npm run install-client && npm run build",
-    "start":"node server.js"
+    "start":"node server.js",
+    "client": "cd Front && npm start"
   },
   "engines":{
     "node":"16.x"
