@@ -55,7 +55,7 @@ app.get("/api/macaron/pagination", (req, res) => {
 });
 
 app.get("/", (_, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./Front/build/index.html"));
 });
 
 app.listen(5000, () => {
