@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CardTournage from "../CardTournage/cardTournage";
-import { Pagination } from "antd";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,7 +10,6 @@ export default function InfoLieu(props) {
   const [recupInfoBack, setRecupInfoBack] = useState([]);
   const [page, setPage] = useState(null);
 
- 
   useEffect(() => {
     async function fetchMyAPI() {
       await window.fetch(
@@ -17,10 +17,8 @@ export default function InfoLieu(props) {
       );
     }
     if (infoLieu.length) {
-      
       fetchMyAPI();
       setPage(1);
-      
     }
   }, [infoLieu]);
 
@@ -30,21 +28,21 @@ export default function InfoLieu(props) {
         `/api/macaron/pagination?page=${page}&limit=8`
       );
       const json2 = await pagination.json();
-     
+
       setRecupInfoBack(json2);
     }
     if (page !== null) {
       fetchMyApiPagination();
     }
   }, [page, infoLieu]);
-  const onChange = (page) => {
-    
-
+  const onChange = (event, page) => {
     setPage(page);
   };
   return (
     <Container>
-      {recupInfoBack.length > 0  && <h1 style={{textAlign:'center', margin:'1em'}}>Liste Exclusive</h1>}
+      {recupInfoBack.length > 0 && (
+        <h1 style={{ textAlign: "center", margin: "1em" }}>Liste Exclusive</h1>
+      )}
       <Row>
         <Col>
           <div
@@ -54,11 +52,12 @@ export default function InfoLieu(props) {
               justifyContent: "center",
               maxHeight: "100%",
               overflow: "auto",
+              width: "100%",
             }}
           >
             {recupInfoBack &&
               recupInfoBack.map((data, index) => {
-              
+               
                 return (
                   <CardTournage
                     key={index}
@@ -68,12 +67,25 @@ export default function InfoLieu(props) {
                     nom_tournage={data.properties.nom_tournage}
                     lat={data.properties.coord_y}
                     lng={data.properties.coord_x}
-                    avatar={` https://i.pravatar.cc/150?img=${index} `}
+                    type_tournage={data.properties.type_tournage}
+                    annee_tournage={data.properties.annee_tournage }
+                    date_fin={data.properties.date_fin}
+                   
                   />
                 );
               })}
           </div>
-          {recupInfoBack.length > 0  && <Pagination  style={{marginTop:'1em'}} defaultCurrent={1} onChange={onChange} total={50} />}
+          {recupInfoBack.length > 0 && (
+            <Stack spacing={2}>
+              {" "}
+              <Pagination
+                style={{ marginTop: "1em" }}
+                count={10}
+                onChange={onChange}
+                t
+              />{" "}
+            </Stack>
+          )}
         </Col>
       </Row>
     </Container>

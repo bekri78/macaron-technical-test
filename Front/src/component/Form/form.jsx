@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from "react";
- 
+
 import emailjs from "emailjs-com";
-import {  Button  } from "antd"; 
+import Button from '@mui/material/Button';
 import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import styled from "styled-components";
 import Lettre from "./image/lettre.svg";
 import Swal from "sweetalert2";
- import "./form.css";
+import "./form.css";
 
 const H2 = styled.h2`
   vertical-align: inherit;
@@ -49,10 +49,8 @@ const Toast = Swal.mixin({
   },
 });
 
-    export default function ContactUs() {
-   
+export default function Contact() {
   const [value, setValue] = useState();
- 
   const [name, setName] = useState("");
   const [sujet, setSujet] = useState("");
   const [email, setEmail] = useState("");
@@ -100,7 +98,6 @@ const Toast = Swal.mixin({
   };
 
   const handeSubmit = (e) => {
-    
     e.preventDefault();
     if (name && isEmail() && value && sujet) {
       sendEmail({
@@ -115,7 +112,6 @@ const Toast = Swal.mixin({
   };
 
   const sendEmail = (variable) => {
-   
     emailjs
       .send(
         "service_ar8ie92",
@@ -125,16 +121,13 @@ const Toast = Swal.mixin({
       )
       .then(
         (result) => {
-          
           succesMessage();
           setName("");
           setEmail("");
           setSujet("");
           setValue("");
-
         },
         (error) => {
-        
           Toast.fire({
             icon: "error",
             title: "Erreur veuillez réessayer",
@@ -142,16 +135,13 @@ const Toast = Swal.mixin({
         }
       );
   };
-   
-   
-   
+
   return (
-    <section className="form" id=" contact">
+    <section className="form" id="contact">
       <Container>
-       
         <H2> Contact </H2>
         <Row className="align-items-center">
-        <Col xs="12" sm="12" md="12" lg="7" className="imgConteneur">
+          <Col xs="12" sm="12" md="12" lg="7" className="imgConteneur">
             <img className="lettre" src={Lettre} alt="" />
           </Col>
           <Col xs="12" sm="12" md="12" lg="5">
@@ -162,7 +152,7 @@ const Toast = Swal.mixin({
 
             <Form className="contact-form" onSubmit={handeSubmit}>
               <Row>
-                <Form.Group md="4"  >
+                <Form.Group md="4">
                   <Form.Control
                     type="text"
                     name="user_name"
@@ -173,8 +163,8 @@ const Toast = Swal.mixin({
                   />
                 </Form.Group>
 
-                <Form.Group as={Col} style={{marginTop:'0.5em'}}>
-                   <Form.Label  id="not-mail">Email non valide</Form.Label>
+                <Form.Group as={Col} style={{ marginTop: "0.5em" }}>
+                  <Form.Label id="not-mail">Email non valide</Form.Label>
                   <Form.Control
                     type="email"
                     name="user_email"
@@ -186,7 +176,7 @@ const Toast = Swal.mixin({
                 </Form.Group>
               </Row>
               <Row>
-                <Form.Group as={Col} style={{marginTop:'0.5em'}}>
+                <Form.Group as={Col} style={{ marginTop: "0.5em" }}>
                   <Form.Control
                     type="text"
                     name="user_sujet"
@@ -198,8 +188,7 @@ const Toast = Swal.mixin({
                 </Form.Group>
               </Row>
 
-              <Form.Group style={{marginTop:'0.5em'}}>
-                
+              <Form.Group style={{ marginTop: "0.5em" }}>
                 <Form.Control
                   as="textarea"
                   name="message"
@@ -210,14 +199,19 @@ const Toast = Swal.mixin({
                   placeholder="Votre message*"
                 />
               </Form.Group>
-              <Button style={{marginTop:'1em'}} type="primary submit" value="Send" onClick={handeSubmit}>
+              <Button
+                style={{ marginTop: "1em" }}
+                type="primary submit"
+                variant="contained"
+                value="Send"
+                onClick={handeSubmit}
+              >
                 Envoyer
               </Button>
+             
             </Form>
             <div className="form-message"></div>
           </Col>
-
-          
         </Row>
       </Container>
     </section>
